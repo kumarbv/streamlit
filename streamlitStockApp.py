@@ -35,4 +35,4 @@ st.bar_chart(data)
 # Print the overall returns for each stock
 st.write("Overall Returns ({} - {}):".format(data[tickers[0]].index[0].date(), data[tickers[0]].index[-1].date()))
 for ticker in sorted_returns.index:
-    print("{}: {:.2f}%".format(ticker, overall_returns[ticker] * 100))
+    st.write("{}: {:.2f}%".format(ticker, overall_returns[ticker] * 100))
