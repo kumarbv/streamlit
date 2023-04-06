@@ -10,8 +10,11 @@ tickers = myStocks
 
 # Download the data for each stock and store it in a dictionary
 data = {}
+start="2023-01-05"
+end="2023-04-05"
+
 for ticker in tickers:
-    data[ticker] = yf.download(ticker, start="2023-01-05", end="2023-04-05")
+    data[ticker] = yf.download(ticker, start=start, end=end)
 
 # Extract the adjusted close prices for each stock and combine them into a single dataframe
 adj_close = pd.DataFrame()
@@ -33,6 +36,6 @@ data = data.set_index("Stocks")
 st.bar_chart(data)
 
 # Print the overall returns for each stock
-st.write("Overall Returns ({} - {}):".format(data[tickers[0]].index[0].date(), data[tickers[0]].index[-1].date()))
+st.write("Overall Returns ({} - {}):".format(start, end))
 for ticker in sorted_returns.index:
     st.write("{}: {:.2f}%".format(ticker, overall_returns[ticker] * 100))
