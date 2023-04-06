@@ -26,13 +26,11 @@ sorted_returns = overall_returns.sort_values(ascending=False)
 
 # Plot the overall returns for each stock
 #plt.bar(sorted_returns.index, sorted_returns.values)
-df = pd.DataFrame(sorted_returns.index,sorted_returns.values)
-st.dataframe(df)
-chart_data = pd.DataFrame(
-    np.random.randn(20, 3),
-    columns=["a", "b", "c"])
-
-st.bar_chart(chart_data)
+# df = pd.DataFrame(sorted_returns.index,sorted_returns.values)
+data = {"Stocks":sorted_returns.Index.to_numpy, "Values": sorted_returns.values}
+data = pd.DataFrame(data)
+data = data.set_index("Stocks")
+st.bar_chart(data)
 
 # Print the overall returns for each stock
 print("Overall Returns ({} - {}):".format(data[tickers[0]].index[0].date(), data[tickers[0]].index[-1].date()))
