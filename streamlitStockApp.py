@@ -30,7 +30,10 @@ sorted_returns = overall_returns.sort_values(ascending=False)
 # Plot the overall returns for each stock
 #plt.bar(sorted_returns.index, sorted_returns.values)
 # df = pd.DataFrame(sorted_returns.index,sorted_returns.values)
-data = {"Stocks":sorted_returns.index.to_numpy(), "Values": sorted_returns.values}
+# my_list = [1, 2, 3, 4, 5]
+# my_new_list = [i * 5 for i in my_list]
+
+data = {"Stocks":sorted_returns.index.to_numpy(), "Values": sorted_returns.values = [i * 100 for i in sorted_returns.values]}
 data = pd.DataFrame(data)
 data = data.set_index("Stocks")
 st.bar_chart(data)
