@@ -33,7 +33,7 @@ sorted_returns = overall_returns.sort_values(ascending=False)
 # my_list = [1, 2, 3, 4, 5]
 # my_new_list = [i * 5 for i in my_list]
 
-data = {"Stocks":sorted_returns.index.to_numpy(), "Values": sorted_returns.values = [i * 100 for i in sorted_returns.values]}
+data = {"Stocks":sorted_returns.index.to_numpy(), "Values": sorted_returns.values*100}
 data = pd.DataFrame(data)
 data = data.set_index("Stocks")
 st.bar_chart(data)
