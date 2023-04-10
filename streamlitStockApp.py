@@ -35,7 +35,7 @@ sorted_returns = overall_returns.sort_values(ascending=False)
 
 data = {"Stocks":sorted_returns.index.to_numpy(), "Values": sorted_returns.values*100}
 data = pd.DataFrame(data)
-data = data.set_index("Stocks")
+data = data.set_index("Values")
 st.bar_chart(data)
 
 # Print the overall returns for each stock
